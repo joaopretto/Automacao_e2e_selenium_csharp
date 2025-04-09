@@ -15,3 +15,7 @@
   * Cucumber (Gherkin) Full Support
   * Gherkin Syntax Highlight and Formatter
   * Reqnroll//SpecFlow Steps Definition
+
+3. Comando para rodar os testes
+   ```sh
+   dotnet test --logger:"html;LogFileName=LivingDoc.html"
