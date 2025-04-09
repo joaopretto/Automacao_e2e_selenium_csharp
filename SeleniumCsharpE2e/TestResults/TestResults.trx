@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="77260675-00d5-4890-a17c-4dce0d768490" name="Joao Pretto@JOAOPRETTO 2025-04-09 19:10:30" runUser="JoaoPretto\Joao Pretto" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-04-09T19:10:30.4128789-03:00" queuing="2025-04-09T19:10:30.4128791-03:00" start="2025-04-09T19:10:25.1079866-03:00" finish="2025-04-09T19:10:30.4175955-03:00" />
+  <TestSettings name="default" id="7e2bf58f-238f-45e2-8bcd-f95fab41a295">
+    <Deployment runDeploymentRoot="Joao_Pretto_JOAOPRETTO_2025-04-09_19_10_30" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="c555fd3b-d912-493d-bcf1-3da9e771d6c2" testId="f759459e-48a5-7763-03a4-878d08425285" testName="InTheDemoQaWebsiteIWantToValidateTheTableElementsAndFunctionalityTextBox" computerName="JOAOPRETTO" duration="00:00:04.2911270" startTime="2025-04-09T19:10:25.6247133-03:00" endTime="2025-04-09T19:10:29.9157874-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c555fd3b-d912-493d-bcf1-3da9e771d6c2">
+      <Output>
+        <StdOut>Given I navigate to DemoQa Website&#xD;
+-&gt; done: DemoQaSteps.GivenInavigatetoDemoQaWebsite() (4,2s)&#xD;
+Then I the url should be "https://demoqa.com/"&#xD;
+-&gt; done: DemoQaSteps.ThenItheurlshouldbe("https://demoqa.com/") (0,0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="InTheDemoQaWebsiteIWantToValidateTheTableElementsAndFunctionalityTextBox" storage="c:\users\joao pretto\documents\automações\automacao_e2e_selenium_csharp\seleniumcsharpe2e\bin\debug\net8.0\seleniumcsharpe2e.dll" id="f759459e-48a5-7763-03a4-878d08425285">
+      <Execution id="c555fd3b-d912-493d-bcf1-3da9e771d6c2" />
+      <TestMethod codeBase="C:\Users\Joao Pretto\Documents\Automações\Automacao_e2e_selenium_csharp\SeleniumCsharpE2e\bin\Debug\net8.0\SeleniumCsharpE2e.dll" adapterTypeName="executor://nunit3testexecutor/" className="SeleniumCsharpE2e.Features.DemoQaTestesFeature" name="InTheDemoQaWebsiteIWantToValidateTheTableElementsAndFunctionalityTextBox" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="f759459e-48a5-7763-03a4-878d08425285" executionId="c555fd3b-d912-493d-bcf1-3da9e771d6c2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Resultados que não estão em uma lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos os resultados carregados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 5.0.0.0: Test execution started&#xD;
+Running all tests in C:\Users\Joao Pretto\Documents\Automações\Automacao_e2e_selenium_csharp\SeleniumCsharpE2e\bin\Debug\net8.0\SeleniumCsharpE2e.dll&#xD;
+   NUnit3TestExecutor discovered 1 of 1 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+Starting ChromeDriver 135.0.7049.84 (6c019e56001911b3fd467e03bf68c435924d62f4-refs/branch-heads/7049@{#1778}) on port 53809&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 53809.&#xD;
+Given I navigate to DemoQa Website&#xD;
+-&gt; done: DemoQaSteps.GivenInavigatetoDemoQaWebsite() (4,2s)&#xD;
+Then I the url should be "https://demoqa.com/"&#xD;
+-&gt; done: DemoQaSteps.ThenItheurlshouldbe("https://demoqa.com/") (0,0s)&#xD;
+&#xD;
+NUnit Adapter 5.0.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>
