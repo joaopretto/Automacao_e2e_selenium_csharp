@@ -142,3 +142,4 @@ C:\Users\Joao Pretto\Documents\Automações\Automacao_e2e_selenium_csharp\Seleni
 C:\Users\Joao Pretto\Documents\Automações\Automacao_e2e_selenium_csharp\SeleniumCsharpE2e\bin\Debug\net8.0\Allure.NUnit.dll
 C:\Users\Joao Pretto\Documents\Automações\Automacao_e2e_selenium_csharp\SeleniumCsharpE2e\bin\Debug\net8.0\AspectInjector.Broker.dll
 C:\Users\Joao Pretto\Documents\Automações\Automacao_e2e_selenium_csharp\SeleniumCsharpE2e\bin\Debug\net8.0\MimeTypesMap.dll
+c:\Users\Joao Pretto\Documents\Automações\Automacao_e2e_selenium_csharp\SeleniumCsharpE2e\obj\Debug\net8.0\SeleniumCsharpE2e.sourcelink.json
