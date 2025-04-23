@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SeleniumCsharpE2e")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98cf98f413655a190be1f0f04c995f138540afd7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a66b511812ad56790c59e07d21a84228e5014cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("SeleniumCsharpE2e")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SeleniumCsharpE2e")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
