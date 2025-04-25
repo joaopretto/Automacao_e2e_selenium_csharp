@@ -26,18 +26,10 @@ jobs:
         run: dotnet build --no-restore
 
       - name: Run tests and create JSON report
-        run: dotnet test --logger "json;LogFileName=TestResults.json"
-
-      - name: Install LivingDoc CLI
-        run: dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
-
-      - name: Generate LivingDoc HTML report
-        run: |
-          livingdoc test-assembly bin/Debug/net7.0/*.dll -t TestResults.json
-        shell: powershell
+        run: dotnet test --logger:"html;LogFileName=Result.html"
 
       - name: Upload LivingDoc report as artifact
         uses: actions/upload-artifact@v4
         with:
           name: LivingDocReport
-          path: LivingDoc.html
+          path: Result.html
