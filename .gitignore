@@ -29,7 +29,6 @@ project.fragment.lock.json
 Thumbs.db
 
 # Ignore drivers de navegador
-Drivers/
 selenium-manager/
 
 # Ignore resultados de testes
