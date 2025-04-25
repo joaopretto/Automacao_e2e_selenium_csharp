@@ -24,7 +24,6 @@ namespace SeleniumCsharp.Steps
             Assert.True(demoQaObject.GetUrl(url));
         }
 
-
         [When(@"I click on the Elements card")]
         public void WhenIclickontheElementscard()
         {

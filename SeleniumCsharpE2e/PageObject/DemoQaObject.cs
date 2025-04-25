@@ -15,6 +15,7 @@ namespace SeleniumCsharpE2e.PageObject
 
         public void ClickOnElementsCard()
         {
+            elementsCard.WaitUntilIsPresent();
             elementsCard.Click();
         }
     }
