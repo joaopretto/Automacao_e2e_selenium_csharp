@@ -41,7 +41,7 @@ namespace SeleniumCsharpE2e.Config
             if (isRunningInGitHubActions)
             {
                 // No GitHub Actions, o ChromeDriver está no PATH
-                driverPath = Environment.GetEnvironmentVariable("PATH");
+                return new ChromeDriver(chromeOptions);
             }
             else
             {
