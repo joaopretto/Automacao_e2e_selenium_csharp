@@ -28,6 +28,7 @@ namespace SeleniumCsharpE2e.Config
         {
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArguments(
+                "--headless",
                 "--disable-gpu",
                 "--no-sandbox",
                 "--disable-dev-shm-usage",

@@ -12,32 +12,43 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # Atualizado para v4
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '9.0.x'
 
-      - name: Install ChromeDriver
-        run: choco install chromedriver --version 135.0.7049.114
+      - name: Install Chrome and ChromeDriver (latest versions)
+        run: |
+          choco install googlechrome -y --no-progress
+          choco install chromedriver -y --no-progress
         env:
           ChocolateyInstall: C:\ProgramData\chocolatey
 
-      - name: Test connectivity to DemoQa
-        run: curl -I https://demoqa.com/    
-        
+      - name: Verify Chrome version
+        run: |
+          chrome_version=$(reg query "HKEY_CURRENT_USER\Software\Google\Chrome\BLBeacon" /v version | findstr version)
+          echo "Chrome version: $chrome_version"
+          chromedriver --version
+
       - name: Restore dependencies
         run: dotnet restore
 
       - name: Build solution
         run: dotnet build --no-restore
 
-      - name: Run tests and generate HTML report
-        run: dotnet test --logger:"html;LogFileName=/Result.html"
+      - name: Run tests with headless mode
+        run: |
+          # Configure variáveis para headless (ajuste no seu código C#)
+          $env:SELENIUM_BROWSER = "chrome"
+          $env:SELENIUM_HEADLESS = "true"
+          dotnet test --logger:"html;LogFileName=TestResults.html"
+        shell: pwsh
 
-      - name: Upload test report
+      - name: Upload test report (if generated)
+        if: success() || failure()
         uses: actions/upload-artifact@v4
         with:
           name: TestResults
-          path: Result.html
+          path: TestResults.html
