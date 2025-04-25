@@ -5,3 +5,4 @@ Feature: DemoQa testes
     Scenario: In the DemoQa Website, I want to validate the table Elements and functionality text box
         Given I navigate to DemoQa Website
          Then I the url should be "https://demoqa.com/"
+         When I click on the Elements card

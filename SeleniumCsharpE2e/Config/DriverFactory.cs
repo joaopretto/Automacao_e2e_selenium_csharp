@@ -11,7 +11,7 @@ namespace SeleniumCsharpE2e.Config
     {
         private static IConfiguration Configuration;
         private static string BaseUrl;
-        private static int Timeout;
+        private static int Timeout = 60;
 
         static DriverFactory()
         {

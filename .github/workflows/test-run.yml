@@ -31,7 +31,7 @@ jobs:
         run: dotnet build --no-restore
 
       - name: Run tests and generate HTML report
-        run: dotnet test --logger:"html;LogFileName=TestResults/Result.html"
+        run: dotnet test --logger:"html;LogFileName=/Result.html"
 
       - name: Upload test report
         uses: actions/upload-artifact@v4
