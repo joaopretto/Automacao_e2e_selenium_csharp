@@ -26,12 +26,6 @@ jobs:
         env:
           ChocolateyInstall: C:\ProgramData\chocolatey
 
-      - name: Verify Chrome version
-        run: |
-          chrome_version=$(reg query "HKEY_CURRENT_USER\Software\Google\Chrome\BLBeacon" /v version | findstr version)
-          echo "Chrome version: $chrome_version"
-          chromedriver --version
-
       - name: Restore dependencies
         run: dotnet restore
 
