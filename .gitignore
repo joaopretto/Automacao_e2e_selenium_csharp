@@ -19,6 +19,7 @@ project.fragment.lock.json
 # Ignore arquivos de debug e de build
 *.pdb
 *.dll
+*.exe
 
 # Ignore arquivos temporários do sistema operacional
 *.tmp
@@ -28,6 +29,7 @@ project.fragment.lock.json
 Thumbs.db
 
 # Ignore drivers de navegador
+Drivers/
 selenium-manager/
 
 # Ignore resultados de testes
