@@ -19,9 +19,6 @@ jobs:
         with:
           dotnet-version: '9.0.x' # Altere conforme seu projeto
 
-      - name: Restore dependencies
-        run: dotnet restore
-
       - name: Build solution
         run: dotnet build --no-restore
 
@@ -31,5 +28,5 @@ jobs:
       - name: Upload LivingDoc report as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: LivingDocReport
+          name: Result
           path: Result.html
