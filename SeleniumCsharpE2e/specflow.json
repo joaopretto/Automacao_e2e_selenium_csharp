@@ -1,0 +1,26 @@
+{
+    "bindingCulture": {
+      "language": "pt-BR"
+    },
+    "generator": {
+      "allowDebugGeneratedFiles": true,
+      "generateAsyncTests": true
+    },
+    "runtime": {
+      "missingOrPendingStepsOutcome": "Error",
+      "stopAtFirstError": false
+    },
+    "trace": {
+      "traceSuccessfulSteps": false,
+      "traceTimings": true,
+      "minTracedDuration": "0:0:0.1"
+    },
+    "plugins": {
+      "defaultRuntimePlugin": "SpecFlow.Plus.LivingDoc",
+      "add": [
+        {
+          "name": "SpecFlow.Plus.LivingDoc"
+        }
+      ]
+    }
+  }

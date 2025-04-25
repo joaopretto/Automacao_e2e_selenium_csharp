@@ -1,0 +1,43 @@
+name: Run SpecFlow Tests and Generate LivingDoc Report
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '7.0.x' # Altere conforme seu projeto
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build solution
+        run: dotnet build --no-restore
+
+      - name: Run tests and create JSON report
+        run: dotnet test --logger "json;LogFileName=TestResults.json"
+
+      - name: Install LivingDoc CLI
+        run: dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
+
+      - name: Generate LivingDoc HTML report
+        run: |
+          livingdoc test-assembly bin/Debug/net7.0/*.dll -t TestResults.json
+        shell: powershell
+
+      - name: Upload LivingDoc report as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: LivingDocReport
+          path: LivingDoc.html
