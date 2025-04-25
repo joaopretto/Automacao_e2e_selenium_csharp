@@ -17,7 +17,7 @@ namespace SeleniumCsharpE2e.Config
         {
             Configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
 
             BaseUrl = Configuration["Test:BaseUrl"];
@@ -34,11 +34,23 @@ namespace SeleniumCsharpE2e.Config
                 "--window-size=1920,1080"
             );
 
-            // Caminho absoluto para o ChromeDriver
-            var driverPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Drivers");
-            if (!Directory.Exists(driverPath))
+            // Detectar se está rodando no GitHub Actions
+            var isRunningInGitHubActions = Environment.GetEnvironmentVariable("GITHUB_ACTIONS") == "true";
+
+            string driverPath;
+            if (isRunningInGitHubActions)
             {
-                throw new DirectoryNotFoundException($"A pasta Drivers não foi encontrada: {driverPath}");
+                // No GitHub Actions, o ChromeDriver está no PATH
+                driverPath = Environment.GetEnvironmentVariable("PATH");
+            }
+            else
+            {
+                // Localmente, use o caminho configurado
+                driverPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Drivers");
+                if (!Directory.Exists(driverPath))
+                {
+                    throw new DirectoryNotFoundException($"A pasta Drivers não foi encontrada: {driverPath}");
+                }
             }
 
             var driver = new ChromeDriver(driverPath, chromeOptions);

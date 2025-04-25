@@ -1,4 +1,4 @@
-name: Run SpecFlow Tests and Generate LivingDoc Report
+name: Run SpecFlow Tests with ChromeDriver
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build-test:
+  test:
     runs-on: windows-latest
 
     steps:
@@ -17,7 +17,15 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '9.0.x' # Altere conforme seu projeto
+          dotnet-version: '9.0.x'
+
+      - name: Install ChromeDriver
+        run: choco install chromedriver --version 135.0.7049.114
+        env:
+          ChocolateyInstall: C:\ProgramData\chocolatey
+
+      - name: Create TestResults directory
+        run: mkdir TestResults
 
       - name: Restore dependencies
         run: dotnet restore
@@ -25,11 +33,11 @@ jobs:
       - name: Build solution
         run: dotnet build --no-restore
 
-      - name: Run tests and create JSON report
-        run: dotnet test --logger:"html;LogFileName=Result.html"
+      - name: Run tests and generate HTML report
+        run: dotnet test --logger:"html;LogFileName=TestResults/Result.html"
 
-      - name: Upload LivingDoc report as artifact
+      - name: Upload test report
         uses: actions/upload-artifact@v4
         with:
-          name: Result
-          path: Result.html
+          name: TestResults
+          path: TestResults/Result.html
