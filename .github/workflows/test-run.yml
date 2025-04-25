@@ -24,6 +24,9 @@ jobs:
         env:
           ChocolateyInstall: C:\ProgramData\chocolatey
 
+      - name: Test connectivity to DemoQa
+        run: curl -I https://demoqa.com/    
+        
       - name: Restore dependencies
         run: dotnet restore
 
