@@ -24,9 +24,6 @@ jobs:
         env:
           ChocolateyInstall: C:\ProgramData\chocolatey
 
-      - name: Create TestResults directory
-        run: mkdir TestResults
-
       - name: Restore dependencies
         run: dotnet restore
 
@@ -40,4 +37,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: TestResults
-          path: TestResults/Result.html
+          path: Result.html
