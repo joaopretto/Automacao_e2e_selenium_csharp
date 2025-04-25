@@ -7,10 +7,6 @@
 bin/
 obj/
 
-# Ignore arquivos de configuração local
-appsettings.json
-appsettings.*.json
-
 # Ignore arquivos de cache do NuGet
 *.nupkg
 packages/
