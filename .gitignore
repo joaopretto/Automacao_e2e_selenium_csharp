@@ -19,7 +19,6 @@ project.fragment.lock.json
 # Ignore arquivos de debug e de build
 *.pdb
 *.dll
-*.exe
 
 # Ignore arquivos temporários do sistema operacional
 *.tmp
