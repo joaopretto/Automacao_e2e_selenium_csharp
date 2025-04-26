@@ -1,17 +1,28 @@
 name: Run E2E Tests
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   test:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: '9.0.x'
+
       - name: Install dependencies
         run: dotnet restore
+
+      - name: Install LivingDoc CLI    
+        run: dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
+
       - name: Run tests
-        run: dotnet test --logger:"console;verbosity=detailed"
+        run: dotnet test --logger:"html;LogFileName=Result.html" echo "Relatorio disponivel LivingDoc/Result.html"
