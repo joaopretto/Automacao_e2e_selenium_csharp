@@ -18,11 +18,16 @@ jobs:
         with:
           dotnet-version: '9.0.x'
 
-      - name: Install dependencies
+      - name: Install Chrome
+        run: choco install googlechrome -y
+  
+      - name: Restore dependencies
+        working-directory: ./SeleniumE2ECsharp  # Ajuste para seu caminho!
         run: dotnet restore
 
       - name: Install LivingDoc CLI    
         run: dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
 
       - name: Run tests
+        working-directory: ./SeleniumE2ECsharp
         run: dotnet test --logger:"html;LogFileName=Result.html" echo "Relatorio disponivel LivingDoc/Result.html"
