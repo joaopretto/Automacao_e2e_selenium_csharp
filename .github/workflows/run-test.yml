@@ -30,4 +30,4 @@ jobs:
 
       - name: Run tests
         working-directory: ./SeleniumE2ECsharp
-        run: dotnet test --logger:"html;LogFileName=Result.html" echo "Relatorio disponivel LivingDoc/Result.html"
+        run: dotnet test --logger:"html;LogFileName=Result.html"
