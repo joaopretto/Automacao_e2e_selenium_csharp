@@ -8,25 +8,33 @@ namespace SeleniumE2ECsharp.Steps
     [Binding]
     public class DemoQaSteps
     {
-        private readonly IWebDriver _driver;
-        private readonly BasePage _basePage;
-
+        private readonly IWebDriver webdriver;
+        public BasePage basePage;
+        public ElementObject elementObject;
+        
         public DemoQaSteps(IWebDriver driver)
         {
-            _driver = driver;
-            _basePage = new BasePage(driver);
+            webdriver = driver;
+            basePage = new BasePage(webdriver);
+            elementObject = new ElementObject();
         }
 
         [Given(@"I navigate to the homepage")]
         public void GivenINavigateToTheHomepage()
         {
-            _basePage.NavigateTo(Config.TestConfig.BaseUrl);
+            webdriver.Navigate().GoToUrl(Config.TestConfig.BaseUrl);
+        }
+        
+        [When(@"I click on Element card")]
+        public void WhenIclickonElementcard()
+        {
+            elementObject.ClickOnElementCard();
         }
 
         [Then(@"the page title should be ""(.*)""")]
         public void ThenThePageTitleShouldBe(string expectedTitle)
         {
-            Assert.AreEqual(expectedTitle, _driver.Title);
+            Assert.IsTrue(basePage.GetTitleUrl(expectedTitle));
         }
     }
 }

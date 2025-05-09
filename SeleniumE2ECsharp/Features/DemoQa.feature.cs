@@ -94,7 +94,10 @@ namespace SeleniumE2ECsharp.Features
         testRunner.Given("I navigate to the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 5
-        testRunner.Then("the page title should be \"DEMOQA\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+         testRunner.When("I click on Element card", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 6
+         testRunner.Then("the page title should be \"DEMOQA\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

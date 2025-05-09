@@ -20,18 +20,14 @@ namespace SeleniumE2ECsharp.Hooks
         public void BeforeScenario()
         {
             var driver = DriverFactory.CreateDriver();
-            _container.RegisterInstanceAs<IWebDriver>(driver);
+            DriverContext.SetDriver(driver);
+            _container.RegisterInstanceAs(driver);
         }
 
         [AfterScenario]
         public void AfterScenario()
         {
-            var driver = _container.Resolve<IWebDriver>();
-            if (TestContext.CurrentContext.Result.Outcome.Status == NUnit.Framework.Interfaces.TestStatus.Failed)
-            {
-                // Tirar screenshot em caso de falha
-            }
-            driver.Quit();
+            DriverContext.QuitDriver();
         }
     }
 }
